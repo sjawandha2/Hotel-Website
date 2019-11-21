@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<title>Hotel</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--External stylesheet-->
+    <link rel="stylesheet" href="./extra.css"> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">    
+    <script src="http://code.jquery.com/jquery.js"></script>    
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+
+<body>
+<div class='container'>
+<!-- book now button-->
+	<a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id='img-btn'>Book Now</button></a>
+
+<!-- Title Name of hotel-->
+	<h3 id='mainHead'>Welcome to King Hotel</h3>
+
+<!--Tabs -->
+	  <div id='head'>
+		   <a href="http://sjawandha.greenrivertech.net/207/extra/final.html"><button id='home'>Home</button></a> 
+		   <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id='booking'>Booking</button></a> 
+		   <a href="http://sjawandha.greenrivertech.net/207/extra/contact.html"><button id='contact'>Contact</button></a>
+	  </div>
+	  
+  <!-- Info clients will get thank you massage after submission-->	
+<div id = "contactus">
+	<h2 style='text-align: center; color:white; font-size: 40px;'>Contact Us</h2>		
+	<h3 style='text-align: center; color:orange; font-size: 24px;'> Thank You for your request.we will contact you soon. </h3>
+ </div>
+ 
+<script>
+
+//Hide all questions first
+    $("#img-btn").hide();
+
+//Show questions one by one
+    $("body").mouseover(function(){
+            $("#img-btn").show();
+    });
+$("body").mouseout(function(){
+            $("#img-btn").hide();
+    });
+    
+      $("#home,#booking,#contact").mouseover(function(){
+ 
+   // change color of  button
+   $(this).css("background-color","black");
+    
+ });
+ 
+     $("#home,#booking,#contact").mouseout(function(){
+ 
+   // change color of button
+   $(this).css("background-color","");
+    
+ });
+ 
+
+    
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

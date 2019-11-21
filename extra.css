@@ -1,0 +1,95 @@
+ /* all files body's style */
+ body{
+    
+    background-color: burlywood;
+    background-attachment: fixed;
+    font-family: 'Sansita', sans-serif;
+}
+
+/* Hotel title name style */
+#mainHead{
+	margin-top: 10px;
+	color: Red;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+
+}
+
+/* tabs style  */
+#head{
+	margin-top: 10px;
+	text-align: center;
+	 border-bottom: 2px solid black;
+	 padding: 16px 30px;
+}
+
+
+/* buttons */
+button{
+
+   background-color: #f44336; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+
+
+ #img-btn{
+    
+  padding: 16px 30px;
+    text-align: center;
+   }
+   
+   
+   
+ #aboutus {
+     background:url("http://cdn30.us1.fansshare.com/image/backgroundforpictures/flyer-backgrounds-brown-trees-730185740.jpg");
+     font-family: 'Lusitana', serif;
+     font-size: 24px;
+     margin: 40px;
+     border: 2px solid white;
+   }
+   
+   
+  
+     
+ #indate
+ {
+         color: Red;
+	font-size: 24px;
+ }
+  
+ #outdate
+ {
+         color: Red;
+	font-size: 24px;
+ }
+ 
+ #box
+ {
+         color: white;
+	font-size: 24px;
+	margin: 40px;
+
+ }
+ 
+#question4
+ {
+        color: white;
+	font-size: 24px;
+	margin: 40px;
+
+ }
+ 
+
+#contactus {
+     background:url("http://cdn30.us1.fansshare.com/image/backgroundforpictures/flyer-backgrounds-brown-trees-730185740.jpg");
+   }
+   

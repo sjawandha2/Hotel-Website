@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Parminder Singh
+    Sukhveer Jahawanda
+    file - rooms3.html
+    -->
+
+<title>Hotel</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--External stylesheet-->
+    <link rel="stylesheet" href="./extra.css"> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">    
+    <script src="http://code.jquery.com/jquery.js"></script>    
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+</head>
+
+<body style="color: white" >
+<!-- book rooms for hotel-->
+ <div  id = "aboutus" class="row">
+      
+      <h3 style="text-align: center; margin-top: 20px; color:black; font-size: 70px; border-bottom: 2px solid orange;">Rooms</h3>
+      
+      
+	
+	<div  style="text-align:center ; margin-top: 20px;" class="col-sm-5">
+		<!--Room Image-->
+		<h2>West Wing King </h2>
+		<img src='https://thingstodoinlasvegas.com/wp-content/uploads/2016/07/bellagio-hotel-500x280.jpg'   style="margin-top:10px; border: 2px solid white; width: 400px;"<br>
+		<!--room infomation-->
+		<p>350 -SQUARE FEET</p>
+		<p> 1 - LUXURIOUS KING </p>
+		1 NIGHT STAY <h2 style='color: orange; font-weight: bold;'>$150.45 </h2><br>
+		<!--Buttons to book the room-->
+		<button style=' margin-bottom: 2cm;' id='book1'>Book </button>
+		<input style="color:black;" types="text" id="Email1" name="Email" placeholder="Email Address">
+		 <button style=' margin-bottom: 2cm;' id='books1'>Submit</button><br>  
+		<!-- Load result here -->
+		<p style="color:Yellow;" id='result1'></p>
+	</div>	
+	
+	
+      
+      <div class="col-sm-6" style="text-align:center; margin-top: 20px;">
+      			<!--room image-->
+			<h2>GRAND ACCESSIBLE KING </h2>
+			<img src='https://thingstodoinlasvegas.com/wp-content/uploads/2016/07/bellagio-hotel-500x280.jpg'   style="margin-top:10px; border: 2px solid white; width: 400px;"/><br>
+			<!--room infomation-->
+			<p>446 -SQUARE FEET</p>
+			<p> 1 - LUXURIOUS KING </p>
+			1 NIGHT STAY <h2 style='color: orange; font-weight: bold;'>$223.75 </h2><br> 
+			<!--buttons to book rooms-->
+			<button style=' margin-bottom: 2cm;' id='book2'>Book </button>   
+			<!-- Load result here -->
+			<p style="color:Yellow;" id='result2'></p>	
+			<input  style="color:black;" types="text" id="Email2" name="Email" placeholder="Email Address"> 
+			<button style=' margin-bottom: 2cm;' id='books2'>Submit</button> <br>         
+     </div>	
+ 
+ 
+      
+	<div class="col-sm-5" style="text-align:center; margin-top: 20px;">
+			<!--room image-->
+			<h2>SKYLOFTS ONE BEDROOM LOFT </h2>
+			<img src='https://www.mgmgrand.com/content/dam/MGM/mgm-grand/hotel/skylofts/one-bedroom/architecture/mgm-grand-hotel-skylofts-one-bedroom-aerial-shot-dining-room.jpg' style="margin-top:10px; border: 2px solid white; width: 400px;"/><br>	
+			<!--room infomation-->
+			<p>1400 -SQUARE FEET</p>
+			<p> 1 - LUXURIOUS KING</p>
+			<p>2 STORIES</p>
+			1 NIGHT STAY <h2 style='color: orange; font-weight: bold;'>$1050.60 </h2><br>
+			<!--buttons to book rooms-->
+			<button style=' margin-bottom: 2cm;' id='book3'>Book </button> 
+			<input style="color:black;" types="text" id="Email3" name="Email" placeholder="Email Address">
+			 <button style=' margin-bottom: 2cm;' id='books3'>Submit</button> <br>     
+			<!-- Load result here -->
+			<p style="color:Yellow;" id='result3'></p>      
+	</div>	
+  
+  
+      
+	<div style="text-align:center; margin-top: 20px;" class="col-sm-5">
+			<!--room image-->
+			<h2>SKYLOFTS TWO BEDROOM LOFT </h2>
+			<img src='https://static.mgmresorts.com/content/dam/MGM/mgm-grand/hotel/skylofts/one-bedroom/architecture/mgm-grand-hotel-skylofts-living-room-girl-on-chair.jpg.image.1152.550.high.jpg' style="margin-top:10px; border: 2px solid white; width: 400px;"/><br>
+			<!--room infomation-->
+			<p>3000 -SQUARE FEET</p>
+			<p> 2 - LUXURIOUS QUEENS</p>
+			<p>2 STORIES</p>
+			1 NIGHT STAY <h2 style='color: orange; font-weight: bold;'>$1577.50 </h2><br>
+			<!--buttons to book rooms-->	
+			<button style=' margin-bottom: 2cm;' id='book4'>Book</button>
+			<!-- Load result here -->
+			<p style="color:Yellow;" id='result4'></p>
+			<input style="color:black;" types="text" id="Email4" name="Email" placeholder="Email Address">
+			 <button style=' margin-bottom: 2cm;' id='books4'>Submit </button> <br>  
+	</div>	
+
+    </div>
+    
+    
+
+<script> 
+  //hide submission button and email input
+  $("#Email1,#Email2,#Email3,#Email4").hide();
+   $("#books1,#books2,#books3,#books4").hide();
+  
+  // Click on book button  than show email input and submission
+  // Click on submit button than load information
+    $("#book1").click(function(){
+    $("#Email1").show();
+    $("#books1").show();
+    $("#books1").click(function(){
+    $('#result1').load('./done.html');
+   $('#Email1,#books1,#book1').hide();
+    });
+ 
+ });
+ 
+
+ // Click on book button  than show email input and submission
+  // Click on submit button than load information
+    $("#book2").click(function(){
+    $("#Email2").show();
+    $("#books2").show();
+    $("#books2").click(function(){
+    $('#result2').load('./done.html');
+   $('#Email2,#books2,#book2').hide();
+    });
+ });
+   
+
+ // Click on book button  than show email input and submission
+  // Click on submit button than load information   
+    $("#book3").click(function(){
+    $("#Email3").show();
+    $("#books3").show();
+    $("#books3").click(function(){
+    $('#result3').load('./done.html');
+   $('#Email3,#books3,#book3').hide();
+    });
+ });
+    
+    
+// Click on book button  than show email input and submission
+// Click on submit button than load information
+    $("#book4").click(function(){
+    $("#Email4").show();
+    $("#books4").show();
+    $("#books4").click(function(){
+    $('#result4').load('./done.html');
+   $('#Email4,#books4,#book4').hide();
+    });
+ });
+ 
+ 
+ 
+</script>
+</body>
+
+</html>

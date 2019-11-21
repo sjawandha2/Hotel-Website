@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<head>
+
+<!--Parminder Singh
+    Sukhveer Jawandha
+    file - Contact.html
+    url - http://sjawandha.greenrivertech.net/207/extra/contact.html
+    -->
+
+<html>
+<title>Hotel</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--External stylesheet-->
+    <link rel="stylesheet" href="./extra.css"> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">    
+    <script src="http://code.jquery.com/jquery.js"></script>    
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    
+     <!-- Style for Map --> 
+<style>
+        #map {
+            height: 50%;
+        }
+        
+        html, body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+ <!-- Book now button --> 
+    <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id="img-btn">Book Now</button></a>	
+    
+     <!-- Title Name of Hotel --> 
+    <h3 id="mainHead">Welcome to King Hotel</h3>
+    
+     <!-- Tabs --> 
+    <div id="head">
+      <a href="http://sjawandha.greenrivertech.net/207/extra/final.html"><button id="home">Home</button></a> 
+      <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id="booking">Booking</button></a> 
+      <a href="http://sjawandha.greenrivertech.net/207/extra/contact.html"><button id="contact">Contact</button></a>
+     </div>
+     
+     
+    <!-- Information  for user to contact hotel service --> 
+   <div id = "contactus">
+	<h2 style='text-align: center; color:white; font-size: 40px;'>Contact Us</h2>
+			<form style='text-align: center;   color:orange;' id="form" action="submit.html" method="get">
+			
+			 <!-- Name Input --> 
+			<label>Name:* </label><br>
+			<input types="text" id="fname" name="Name"placeholder="Name"><br>
+	
+			 <!-- Phone Number Input --> 
+			<label>Phone Number: </label><br>
+			<input types="text" id="number" name="Phone" placeholder="000-000-0000"> <br>
+			
+			 <!-- Email address Input --> 
+			<label>Email address:* </label><br>
+			<input types="text" id="Email" name="Email" placeholder="Email Address">  <br>
+		
+			 <!-- Comment box for clients --> 
+			<label>Comments and Questions: </label><br>
+			<textarea id="comments" name="comments" ></textarea> <br>
+			
+			<p>
+			(*) required fields
+			</p>
+			
+ 				<!-- Submission Button --> 
+			<input style='text-align: center; color:Black;' type="submit" name="btnSubmit" value="Submit "> <br>
+	
+
+			
+</form>
+ </div> 
+
+
+</div>
+
+
+
+<!-- Add map in footer -->
+
+<footer style='margin-top:10px;' id="map"></footer> 
+<script>
+// map  id
+//lattitude and logtitude number for location
+//zoom the map to location
+    var mapDiv = document.getElementById("map");
+    var king = {lat: 36.114, lng: -115.172907};
+    var mapOptions = {zoom: 12, center: king};
+    
+    var map, marker;
+      function initMap() {
+        map = new google.maps.Map(mapDiv, mapOptions);
+        marker = new google.maps.Marker({
+            position: king,
+            map: map
+        });
+      }
+      
+      
+      //Hide all questions first
+    $("#img-btn").hide();
+
+//Show questions one by one
+    $("body").mouseover(function(){
+            $("#img-btn").show();
+    });
+$("body").mouseout(function(){
+            $("#img-btn").hide();
+    });
+    
+      $("#home,#booking,#contact").mouseover(function(){
+ 
+   // change color of  button
+   $(this).css("background-color","black");
+    
+ });
+ 
+     $("#home,#booking,#contact").mouseout(function(){
+ 
+   // change color of button
+   $(this).css("background-color","");
+    
+ });
+ 
+    var form = document.getElementById("form");
+    form.onsubmit = checkForm;
+    
+    function checkForm()
+    {
+            //Validate first name
+            var name = document.getElementById('fname').value;
+            if (name === "")
+            {
+                return false;
+            }
+
+            
+            
+            //Validate email name
+            var email = document.getElementById('Email').value;
+    
+            if (email === "")
+            {
+                return false;
+            }
+            else
+            {
+               err.className = "hidden";
+            }
+            
+        }
+        
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhS7Ozax9zQbrO7S_0P1IXY_V9kRnYuWg&callback=initMap" async defer></script>
+
+</body>
+</html>

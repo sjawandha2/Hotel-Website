@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Parminder Singh
+    Sukhveer Jawandha
+    file - booking.html
+	url - http://sjawandha.greenrivertech.net/207/extra/booking.html
+    -->
+
+<title>Hotel</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--External stylesheet-->
+    <link rel="stylesheet" href="./extra.css"> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">    
+    <script src="http://code.jquery.com/jquery.js"></script>    
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+</head>
+
+<body style="color: white">
+	<div class='container'>
+	 <!-- Book Now  Button --> 
+	<a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id='img-btn'>Book Now</button></a>
+	  <div id='heads'>
+	   <!-- Name of Hotel --> 
+		<h3 id='mainHead'>Welcome to King Hotel</h3>
+	</div>
+	 <!-- Tabs --> 
+		<div id='head'>
+			 <a href="http://sjawandha.greenrivertech.net/207/extra/final.html"><button id='home'>Home</button></a> 
+			 <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id='booking'>Booking</button></a> 
+                       <a href="http://sjawandha.greenrivertech.net/207/extra/contact.html"><button id='contact'>Contact</button></a>
+		</div>
+  
+   <!-- Form for booking the rooms  --> 
+<div id='box'>
+            <!-- left box -->
+            <div class="row">
+             <h3 style='text-align: center; margin-top: 70px; color:Yellow; font-size: 70px;'>Fill The Form</h3>
+                <div id='leftBox' class="col-sm-4"></div>
+                <div id='centre' class="col-sm-4">
+                    <div id='contents'>
+             <div id='space'></div>  
+                    
+                     <!-- Check in and Check out Date --> 
+            <div id='question1'>
+	                <p><strong>Chek In Date</strong></p>
+	               <input class='option' type='text' name='date' id='indate'>
+	               <p><strong>Chek Out Date</strong></p>
+	              <input class='option' type='text' name='date' id='outdate'>
+	              <div class='disable'><button style=' margin-bottom: 2cm;' id='question1Btn'>Next</button></div>
+            </div>
+            
+
+             <!-- Adult member for hotels --> 
+            <div id='question2'>
+	             <h1><strong>Adult</strong></h1>
+	             <input class='option' type='radio' name='answer' value='low'> 1<br>
+	            <input class='option' type='radio' name='answer' value='low'> 2<br>
+	            <input class='option' type='radio' name='answer' value='medium'> 3<br>
+	            <input class='option' type='radio' name='answer' value='high'> 4+<br>
+	            <button style=' margin-bottom: 2cm;' id='question2Btn'>Next</button>
+            </div>
+            
+            
+             <!-- rooms for Children  -->       
+            <div id='question3'>
+	             <h1><strong>Children</strong></h1>
+	              <input class='option' type='radio' name='answer3' value='low'> 0<br>
+	            <input class='option' type='radio' name='answer3' value='low'> 1<br>
+	            <input class='option' type='radio' name='answer3' value='medium'> 2<br>
+	            <input class='option' type='radio' name='answer3' value='high'> 3+<br>
+	            <button style=' margin-bottom: 2cm;' id='question3Btn'>Next</button>
+            </div>
+          
+             <!-- How many rooms user need --> 
+             <div id='question4'>
+	             <h1><strong>Rooms</strong></h1>
+	              <input class='option' type='radio' name='answer4' value='low'> 1<br>
+	            <input class='option' type='radio' name='answer4' value='medium'> 2<br>
+	            <input class='option' type='radio' name='answer4' value='high'> 3+<br>
+	            <button style=' margin-bottom: 2cm;' id='submit'>Submit</button>
+            </div>
+            </div>
+	 </div>
+     </div> 
+</div>
+
+
+            <!-- Load result here -->
+            <div id='result'></div>	
+			
+</div>		
+
+</body>
+<script>
+//Hide all questions first
+    $("#img-btn").hide();
+
+//Show questions one by one
+    $("body").mouseover(function(){
+            $("#img-btn").show();
+    });
+$("body").mouseout(function(){
+            $("#img-btn").hide();
+    });
+    
+      $("#home,#booking,#contact").mouseover(function(){
+ 
+   // change color of  button
+   $(this).css("background-color","black");
+    
+ });
+ 
+     $("#home,#booking,#contact").mouseout(function(){
+ 
+   // change color of button
+   $(this).css("background-color","");
+    
+ });
+ 
+ 
+    
+//Display a date picker
+        $("#indate").datepicker();
+    	$("#outdate").datepicker();
+    	
+    
+//Hide all questions first
+    $('#question2').hide();
+    $('#question3').hide();
+    $('#question4').hide();
+    $('#question5').hide();
+
+//Show questions one by one
+
+    $('#question1Btn').click(function(){
+        $('#question1').hide();
+        $('#question2').show();
+    });
+    $('#question2Btn').click(function(){
+        $('#question2').hide();
+        $('#question3').show();
+    });
+    $('#question3Btn').click(function(){
+        $('#question3').hide();
+        $('#question4').show();
+    });
+
+
+
+//Used high, medium, and low values in the above answer options 
+//push all the clicked answer values in the following lists
+    var high = [];
+    var medium = [];
+    var low = [];
+    //answer options
+    var options = document.getElementsByClassName('option');
+    
+    
+// push all the selected answer options to above given empty lists   
+    for (var i=0; i<options.length; i++)
+    {
+        options[i].onclick = function(e){
+            if(this.value == 'high')
+            {
+               high.push(this.value);
+               console.log(high);   
+            }
+            else if(this.value == 'medium')
+            {
+                medium.push(this.value);
+                console.log(medium); 
+            }
+            else if(this.value == 'low')
+            {
+                low.push(this.value);
+                console.log(low); 
+            }
+        
+            //call result function and pass four values
+            results(high, medium, low);
+
+        }
+    };
+
+//Results function
+    // function takes three parameters and show results according to array length
+    function results(high, medium, low)
+    {
+        // variables hold the length of high, medium,and low
+        var highLength = high.length;
+        var mediumLength = medium.length;
+        var lowLength = low.length;
+ 
+        
+        $('#submit').click(function(){
+            $('#box').hide();
+           
+                //If user selects two or more than two high value options then load below file
+                if (highLength >= 2)     
+                {
+                    //also used javascript in the following files, to see the codes check the given link
+                    $('#result').load('./rooms3.html');
+                    console.log('high');
+                }
+                
+                 //same here if user checked two or more than two medium value options then load this
+                else if (mediumLength >= 2)
+                {
+                    $('#result').load('./rooms2.html');
+                    console.log('low');
+                }
+                
+                //same here if user checked two or more than two low value options then load this
+                else if (lowLength >= 2)
+                {
+                    $('#result').load('./rooms1.html');
+                    console.log('low');
+                }
+                else
+                {
+                    $('#result').load('./rooms2.html');
+                }
+
+            });            
+  
+        }
+  
+</script>
+</html>

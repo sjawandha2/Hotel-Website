@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+
+
+<!-- Parminder Singh
+    Sukhveer Jawandha
+    file - final.html
+    url - http://sjawandha.greenrivertech.net/207/extra/final.html
+    main File
+    -->
+
+<html>
+<title>Hotel</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--External stylesheet-->
+    <link rel="stylesheet" href="./extra.css"> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">    
+    <script src="http://code.jquery.com/jquery.js"></script>    
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+</head>
+<body>
+<div>
+  <div class="container">
+  
+  <!--Book now button -->
+    <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id="img-btn">Book Now</button></a>	
+   <!-- Name of Hotel -->
+    <h3 id="mainHead">Welcome to King Hotel</h3>
+    <!--Tabs for hotels-->
+    <div id="head">
+      <a href="http://sjawandha.greenrivertech.net/207/extra/final.html"><button id="home">Home</button></a> 
+      <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><button id="booking">Booking</button></a> 
+      <a href="http://sjawandha.greenrivertech.net/207/extra/contact.html"><button id="contact">Contact</button></a>
+     </div>
+      <!-- Cover image -->
+    <div><a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"></a><img src="images/hotel.jpg"style="margin-top:10px; border: 2px solid white" width="1135" height="845" alt="hotel"></a></div>
+    
+
+   <!-- information about hotel --> 
+    <div  id = "aboutus" class="row">
+      
+      <h3 style="text-align: center; margin-top: 70px; color:black; font-size: 70px; border-bottom: 2px solid white;">About Us</h3>
+      
+      <div class="col-sm-6">
+        
+        <h3 style="margin-top: 70px; color:yellow; font-size: 30px;">Here you are king or queen</h3> 
+        <p style="margin-top: 20px; font-size: 16px; color:white;">We have set higher standards for ourselves that go above and beyond the minimum to earn the appreciation of our guests. Operated in an environmentally conscientious and responsible way with state-of-the-art equipment, we promise to meet all of our high standards to your full satisfaction. Each room features a four-poster bed in a classic style designed especially for KING´s HOTELs! Free wireless internet throughout the hotels and a wide range of culinary delights at our breakfast buffet. Here you are king (or queen). Welcome to this world-class city with the heart. We look forward to receiving your reservation.</p>
+        
+        <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><img src="images/hotel.jpg" width ="450px"  style="margin-top:30px ;" target="_blank" /></a> 
+      </div>	
+      
+      <div class="col-sm-5">
+        <h3 style="margin-top: 70px; color:yellow; font-size: 30px;">Feel the royal flair.</h3>
+        <p style="margin-top: 20px; font-size: 16px; color:white;"> Our individual boutique hotels in Munich are first choice for your visit to Munich: The luxurious 4-star “FIRST CLASS” and the less expensive 3-star superior “CENTER” hotels are located right in the heart of the city, just 150 meters from Munich’s Central Station. This is Munich at its best: authentic and genuine! With furnishings specially designed for you that carry the special KING´s HOTEL signature.</p>
+        
+        <p style="margin-top: 20px; font-size: 16px; color:white;">We offer you an intentionally unique ambiance: where Bavarian blacksmithery meets traditional woodworking from the region. Warm wood paneling made of spruce and special coffered wood ceilings in the classical style are the crowning touches to the KING´s HOTEL ambiance. Here you will find personal peace and comfort even in the midst of the city’s hustle and bustle. Whether as a base for a successful business trip or on a private visit to the Bavarian capital, both hotels provide the perfect setting for a special time in Munich. All with state-of-the-art technology and a family atmosphere.</p>
+        
+        <p style="margin-top: 20px; font-size: 16px; color:white;">All of the major hubs in the city are within walking distance. Evening entertainment and sightseeing are just around the corner. Whether you’re coming to the city for a trade show or Oktoberfest, treat yourself to a hotel booking with royal flair.</p>
+        
+        <a href="http://sjawandha.greenrivertech.net/207/extra/booking.html"><h3 style="text-align: center;color:black; font-size: 40px; border: 2px solid red;background-color: orange;">Book Now</h3></a>
+        
+      </div>		
+    </div>
+    
+  </div>
+</div>
+
+</body>
+<script>
+//Hide all questions first
+    $("#img-btn").hide();
+
+//Show questions one by one
+    $("body").mouseover(function(){
+            $("#img-btn").show();
+    });
+$("body").mouseout(function(){
+            $("#img-btn").hide();
+    });
+    
+      $("#home,#booking,#contact").mouseover(function(){
+ 
+   // change color of  button
+   $(this).css("background-color","black");
+    
+ });
+ 
+     $("#home,#booking,#contact").mouseout(function(){
+ 
+   // change color of button
+   $(this).css("background-color","");
+    
+ });
+ 
+</script>
+</html>
